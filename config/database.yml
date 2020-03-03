@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: countries
+  database: country
 
 test:
   <<: *default
-  database: countries
+  database: country
 
 production:
   <<: *default
-  database: countries_production
-  username: countries
+  database: country_production
+  username: country
   password: <%= ENV['COUNTRIES_DATABASE_PASSWORD'] %>

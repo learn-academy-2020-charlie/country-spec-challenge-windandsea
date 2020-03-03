@@ -1,10 +1,12 @@
-# Challenge: Rails Model
+# Challenge: Rails Active Record RSpec Query Challenge
 
-- Active Record queries from the Country database 
-- Add logic to the model specs to get the tests passing
+- Creating Active Record queries from the Country database
+- This application has a spec file of failing tests in *spec/models/country_queries_spec.rb*
+- Add logic to the *spec/models/country_queries.rb* to get the tests passing
 
-Setup:
+### Setup:
 - git clone
 - cd into folder
-- run `bundle`
-- run rspec spec/models/intro_to_sql_specs.rb
+- $ `bundle`
+- $ rails db:create
+- $ bundle exec rspec spec/models/country_queries_spec.rb
