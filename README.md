@@ -8,5 +8,5 @@
 - git clone
 - cd into folder
 - $ `bundle`
-- $ rails db:create
-- $ bundle exec rspec spec/models/country_queries_spec.rb
+- $ yarn
+- $ bundle exec rspec spec/models/country_query_specs.rb

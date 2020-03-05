@@ -10,11 +10,13 @@ RSpec.describe "Practice with ActiveRecord", type: :model do
 
     it "can find records and attributes" do
       #What is the area of the US?
+      us = Country.where(code: 'USA').first
       expect(us.surfacearea).to eq(9363520.0)
     end
 
     it "can find records and attributes" do
       #What is the population of Canada?
+      canada = Country.where(code: 'CAN').first
       expect(canada.population).to eq(31147000)
     end
 
