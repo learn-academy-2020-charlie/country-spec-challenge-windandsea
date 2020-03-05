@@ -9,4 +9,4 @@
 - cd into folder
 - $ `bundle`
 - $ yarn
-- $ bundle exec rspec spec/models/country_query_specs.rb
+- $ rspec ./spec/models/country_query_specs.rb
