@@ -22,41 +22,58 @@ RSpec.describe "Practice with ActiveRecord", type: :model do
 
     it "can find records and attributes" do
       #What is the area of Canada?
+      canada = Country.where(code: 'CAN').first
       expect(canada.surfacearea).to eq(9970610.0)
     end
 
 
     it "can find records via equality comparrison (class)" do
       #List the number of countries in Europe that have a surface area greater than 200,000 km squared.
-      area = 200_000
       countries = Country
-        .where("surfacearea > ?", area)
-        .where(continent: 'Europe')
+      .where(continent: "Europe")
+      .where("surfacearea > 200000")
       expect(countries.count).to eq(13)
     end
 
     it "can find records via equality comparrison" do
       #List the countries in Europe that have a life expectancy of more than 78?
+      countries = Country
+      .where(continent: "Europe")
+      .where("lifeexpectancy > 78")
       expect(countries.count).to eq(15)
     end
 
     it "can find records via equality comparrison" do
       #List the countries in Europe that have a life expectancy of less than 77?
+      countries = Country
+      .where(continent: "Europe")
+      .where("lifeexpectancy < 77")
       expect(countries.count).to eq(22)
     end
 
     it "can combine comaparisons" do
       #List the countries in Europe that have a life expectancy of less than 77 and surfacearea less than 50,000 km.?
+      countries = Country
+      .where(continent: "Europe")
+      .where("lifeexpectancy < 77")
+      .where("surfacearea < 50000")
       expect(countries.count).to eq(7)
     end
 
     it "can find records via equality comparrison" do
-      #List the countries that have a population smaller than 30,000,000 and a life expectancy of more than 45?
+      #List the countries that have a population greater than 30,000,000 and a life expectancy of more than 45?
+      countries = Country
+      .where("population > 30000000")
+      .where("lifeexpectancy > 45")
       expect(countries.count).to eq(35)
     end
 
     it "can find records via multiple equality comparrisons" do
-      #List the countries in Africa that have a population smaller than 30,000,000 and a life expectancy of more than 45?
+      #List the countries in Africa that have a population greater than 30,000,000 and a life expectancy of more than 45?
+      countries = Country
+      .where(continent: "Africa")
+      .where("population > 30000000")
+      .where("lifeexpectancy > 45")
       expect(countries.count).to eq(8)
    end
 
