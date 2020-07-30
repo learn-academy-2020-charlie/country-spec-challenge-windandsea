@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+# STRETCH CHALLENGES
+
 RSpec.describe Country, type: :model do
   it "should find languages" do
     switzerland = Country.where(code: 'CHE').first
@@ -25,14 +27,14 @@ RSpec.describe Country, type: :model do
       #your code here
       #Hint:  when using sort_by put a '-' in front of your return to reverse the results
     end
-    
+
     expect(sorted_by_surfacearea.first.code).to eq("RUS")
   end
 
-  it "stretch: shold find languages spoken in the 2 countries with highest life expectancy" do
+  it "stretch: should find languages spoken in the 2 countries with highest life expectancy" do
     #Hint: filter out countries with lifeexpectancy greater than 0
     #Hint: you'll want to sort lifeexpectancy in descending order
- 
+
     expected_languages.each do |language|
       expect(languages).to include(language)
     end
